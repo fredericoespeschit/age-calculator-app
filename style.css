@@ -32,21 +32,18 @@ body {
 
 .info {
   display: flex;
-  
-  justify-content: space-between;
-  background-color: antiquewhite;
 }
 
 #day,
 #month,
 #year {
+  display: flex;
+  flex-direction: column;
   font-size: 12px;
   text-transform: uppercase;
 }
 .label-info {
-  display: flex;
-  flex-direction: column;
-  background-color: brown;
+  color: hsl(0, 0%, 86%);
 }
 .input-info {
   width: 40px;
