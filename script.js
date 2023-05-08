@@ -60,3 +60,19 @@ function calculateAge(birthDay, birthMonth, birthYear) {
     //Como calcular os dias de vida (idade em anos * 365) // é preciso tratar, pois nem todo ano tem 365 dias
 
 }
+
+function year () {
+    //Como calcular a idade de uma pessoa?
+    //Ano atual - ano de nascimento
+    //Validar o mês informado e verificar se o mês de aniversario informado já passou
+    //Se estamos no mês do aniversario, verificar se o dia do aniversario já passou
+}
+function month () {
+    //Como calcular os meses de vida (idade x 12)
+    //Idade em anos x 12, porque são 12 meses
+}
+function day () {
+    //Como calcular os dias de vida (idade em anos * 365) 
+    //Idade em anos * a quantidade de dias no ano
+    //Tratar a quantidade de dias, quando o ano for bissexto multiplicar por 366
+}
