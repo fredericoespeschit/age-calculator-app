@@ -18,19 +18,16 @@ body {
 }
 
 .content {
+  padding: 10px;
   width: 30%;
   border-radius: 15px 15px 80px 15px;
-  background-color: hsl(0, 0%, 100%);
-}
-
-.align-content {
-  margin: 10px;
-  padding: 10px;
-  
+  background-color: darkgrey;
+  /* background-color: hsl(0, 0%, 100%); */
 }
 
 .info {
   display: flex;
+  width: 85%;
 }
 
 #day,
@@ -46,7 +43,7 @@ body {
   color: hsl(0, 0%, 86%);
 }
 .input-info {
-  width: 90px;
+  width: 90%;
   margin-right: 8px;
   height: auto;
   padding: 10px;
