@@ -14,11 +14,11 @@ send.addEventListener("click", function (event) {
         return console.log("Data inválida.");
     }
 
-    const age = calculateAge(birthDay, birthMonth, birthYear);
+    const age = year(birthMonth, birthYear);
 
-    document.querySelector("#years").innerHTML = age.yearLife;
-    document.querySelector("#months").innerHTML = age.monthLife;
-    document.querySelector("#days").innerHTML = age.dayLife;
+    document.querySelector("#years").innerHTML = age.ano;
+    // document.querySelector("#months").innerHTML = age.monthLife;
+    // document.querySelector("#days").innerHTML = age.dayLife;
 });
 
 function isValidForm(birthDay, birthMonth, birthYear) {
@@ -32,39 +32,44 @@ function isValidForm(birthDay, birthMonth, birthYear) {
     return true;
 }
 
-function calculateAge(birthDay, birthMonth, birthYear) {
-    //Como calcular os anos de vida (ano atual - ano de nascimento)
+// function calculateAge(birthDay, birthMonth, birthYear) {
+//     //Como calcular os anos de vida (ano atual - ano de nascimento)
+//     const currentDate = new Date();
+//     const day = currentDate.getDay();
+//     const year = currentDate.getFullYear();
+//     const month = currentDate.getMonth();
 
+//     const yearLife = year - birthYear;
+
+//     //Como calcular os meses de vida (idade x 12)
+//     const monthLife = yearLife * 12;
+//     console.log(monthLife)
+
+//     if ((birthYear % 4 === 0 && birthYear % 100 !== 0) || birthYear % 400 === 0) {
+//         const dayLifeB = yearLife * 366;
+//         return dayLifeB;
+//     } else {
+//         const dayLife = yearLife * 365;
+//         return dayLife;
+//     }
+
+//     //Como calcular os dias de vida (idade em anos * 365) // é preciso tratar, pois nem todo ano tem 365 dias
+
+// }
+
+function year (birthMonth, birthYear) {
+    //Como calcular a idade de uma pessoa?
+    //Ano atual - ano de nascimento
     const currentDate = new Date();
-    const day = currentDate.getDay();
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth();
 
-    const yearLife = year - birthYear;
+    const ano = birthYear - year;
+    console.log(ano);
 
-    //Como calcular os meses de vida (idade x 12)
-    const monthLife = yearLife * 12;
-    console.log(monthLife)
-
-
-
-    if ((birthYear % 4 === 0 && birthYear % 100 !== 0) || birthYear % 400 === 0) {
-        const dayLifeB = yearLife * 366;
-        return dayLifeB;
-    } else {
-        const dayLife = yearLife * 365;
-        return dayLife;
-    }
-
-
-    //Como calcular os dias de vida (idade em anos * 365) // é preciso tratar, pois nem todo ano tem 365 dias
-
-}
-
-function year () {
-    //Como calcular a idade de uma pessoa?
-    //Ano atual - ano de nascimento
     //Validar o mês informado e verificar se o mês de aniversario informado já passou
+
+    
     //Se estamos no mês do aniversario, verificar se o dia do aniversario já passou
 }
 function month () {
