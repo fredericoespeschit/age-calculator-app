@@ -18,10 +18,9 @@ body {
 }
 
 .content {
-  padding: 10px;
+  padding: 15px;
   width: 30%;
   border-radius: 15px 15px 80px 15px;
-  
   background-color: hsl(0, 0%, 100%);
 }
 
@@ -38,10 +37,12 @@ body {
   font-size: 12px;
   text-transform: uppercase;
 }
+
 .label-info {
   flex-wrap: wrap;
   color: hsl(0, 0%, 86%);
 }
+
 .input-info {
   width: 90%;
   margin-right: 8px;
@@ -53,33 +54,56 @@ body {
   border-width: 1px;
 }
 
+/* Inicio: Linha separadora e botão */
 .start {
+  margin-top: 1rem;
+  width: 100%;
+  position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
-#horizontal-line {
-  width: 90%;
-  border-top: 2px solid hsl(0, 0%, 94%);
+.start:after {
+  content: "";
+  width: 100%;
+  background: #8888;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 1px;
+  right: 0;
 }
 
 #background-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
-  background-color: hsl(259, 100%, 65%);
+  position: relative;
+  background: transparent;
+  border: none;
+  z-index: 10;
+  padding: 0;
 }
+
 #background-button a {
   text-align: center;
 }
-#background-button img {
-  width: 55%;
-}
 
+#background-button img {
+  padding: 1.2rem;
+  background: hsl(259, 100%, 65%);
+  border-radius: 100%;
+  cursor: pointer;
+  transition: .3s;
+  border: none;
+  outline: 2px solid hsl(259, 100%, 65%);
+  outline-offset: -2px;
+}
+#background-button img:hover {
+  background: #111111;
+  outline: 2px solid #111111;;
+}
+/* Fim: Linha separadora e botão */
+
+/* Inicio: Resultados dos calculos */
 .results {
   display: flex;
   flex-direction: column;
