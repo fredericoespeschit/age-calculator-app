@@ -14,9 +14,9 @@ send.addEventListener("click", function (event) {
         return console.log("Data inválida.");
     }
 
-    const age = year(birthMonth, birthYear);
+    const age = year(birthMonth, birthYear, birthDay);
 
-    document.querySelector("#years").innerHTML = age.ano;
+    document.querySelector("#years").innerHTML = age;
     // document.querySelector("#months").innerHTML = age.monthLife;
     // document.querySelector("#days").innerHTML = age.dayLife;
 });
@@ -57,24 +57,36 @@ function isValidForm(birthDay, birthMonth, birthYear) {
 
 // }
 
-function year (birthMonth, birthYear) {
-    //Como calcular a idade de uma pessoa?
-    //Ano atual - ano de nascimento
+function year (birthMonth, birthYear, birthDay) {
+    // Como calcular a idade de uma pessoa?
+    // Ano atual - ano de nascimento
+    // Validar o mês informado e verificar se o mês de aniversario informado já passou
+    // Se estamos no mês do aniversario, verificar se o dia do aniversario já passou
     const currentDate = new Date();
-    const year = currentDate.getFullYear();
-    const month = currentDate.getMonth();
+    const currentYear = currentDate.getFullYear();
+    const currentMonth = currentDate.getMonth() + 1;
+    const currentDay = currentDate.getDate();
 
-    const ano = birthYear - year;
-    console.log(ano);
+    let age = currentYear - birthYear;
 
-    //Validar o mês informado e verificar se o mês de aniversario informado já passou
+    if (currentMonth < birthMonth || (currentMonth === birthMonth && currentDay < birthDay)){
+        age = age - 1;
+        console.log(age)
+    }
 
-    
-    //Se estamos no mês do aniversario, verificar se o dia do aniversario já passou
+    return age;
+
 }
-function month () {
+function month (birthMonth, birthYear, birthDay) {
     //Como calcular os meses de vida (idade x 12)
     //Idade em anos x 12, porque são 12 meses
+    const monthsYear = 12;
+    const age = year(birthMonth, birthYear, birthDay);
+    
+
+    age = age * monthsYear;
+    console.log(age)
+    return age;
 }
 function day () {
     //Como calcular os dias de vida (idade em anos * 365) 
